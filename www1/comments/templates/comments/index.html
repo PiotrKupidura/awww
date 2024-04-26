@@ -1,0 +1,11 @@
+{% load static %}
+<a href="/comments/create">Add Comment</a>
+{% if comment_list %}
+    <ul>
+    {% for comment in comment_list %}
+        <li><a href="/comments/{{ comment.id }}/">{{ comment.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No comments are available.</p>
+{% endif %}
